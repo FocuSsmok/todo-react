@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #CC9DC2;
+    --secondary-color: #e2e2e2;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+.app__container {
+    padding-top: 80px;
+}
+
+.app__inner-container {
+    max-width: 700px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.app__title {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: var(--secondary-color);
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.todo {
+    margin-top: 3rem;
+    background-color: var(--secondary-color);
+    /* padding: 2rem; */
+    border-radius: 0 0 5px 5px;
+}
+
+.todo__container {
+    border-radius: 0 0 5px 5px;
+}
+
+.todo__inner-container {
+    padding: 2rem;
+}
+
+.add::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.add__text {
+    border: 0;
+    border-radius: 5px;
+    min-height: 3rem;
+    outline: 0;
+    width: 70%;
+    padding: 1rem;
+    color: var(--primary-color);
+}
+
+.add__submit {
+    min-height: 3rem;
+    border: none;
+    width: 25%;
+    float: right;
+    background: #B23C61;
+    color: #fff;
+    padding: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.add__submit:hover {
+    cursor: pointer;
+}
+
+.tasks__list {
+    background: #fff;
+    list-style-type: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.task {
+    width: 100%;
+    padding: 2rem;
+    color: #B23C61;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #B23C61;
+}
+
+.task::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.task:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+.task input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.task label {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background: var(--secondary-color);
+    margin-right: 1rem;
+    border-radius: 50%;
+    position: relative;
+    vertical-align: middle;
+}
+
+.task label:hover {
+    cursor: pointer;
+}
+
+.task label.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 7.5px;
+    width: 7.5px;
+    transform: translate(-50%, -50%);
+    background: #176D40;
+    border-radius: 50%;
+}
+
+.task__remove {
+    display: inline-block;
+    float: right;
+    /* background-color: var(--secondary-color); */
+    height: 20px;
+    width: 20px;
+    position: relative;
+    transition: .3s all linear;
+}
+
+.task__remove:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+}
+
+.task__remove::before, .task__remove::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #B23C61;
+    width: 20px;
+    height: 5px;
+}
+
+.task__remove::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
